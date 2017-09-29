@@ -1,24 +1,26 @@
 <?php namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 class TestConsole extends Command {
+
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'command:name';
+	protected $name = 'testconsole';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Command description.';
+	protected $description = '这是一个测试artisan的描述';
 
 	/**
 	 * Create a new command instance.
@@ -38,6 +40,7 @@ class TestConsole extends Command {
 	public function fire()
 	{
 		//
+        Log::info('这是我写的log');
 	}
 
 	/**
@@ -48,7 +51,7 @@ class TestConsole extends Command {
 	protected function getArguments()
 	{
 		return [
-			['example', InputArgument::REQUIRED, 'An example argument.'],
+
 		];
 	}
 
