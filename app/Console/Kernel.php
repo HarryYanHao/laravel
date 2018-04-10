@@ -1,32 +1,1 @@
-<?php namespace App\Console;
-
-use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
-class Kernel extends ConsoleKernel {
-
-	/**
-	 * The Artisan commands provided by your application.
-	 *
-	 * @var array
-	 */
-	protected $commands = [
-		'App\Console\Commands\Inspire',
-        'App\Console\Commands\TestConsole'
-	];
-
-	/**
-	 * Define the application's command schedule.
-	 *
-	 * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-	 * @return void
-	 */
-	protected function schedule(Schedule $schedule)
-	{
-//		$schedule->command('inspire')
-//				 ->hourly();
-        //调用artisan
-        $schedule->command('testconsole')->everyFiveMinutes();
-	}
-
-}
+<?php namespace App\Console;use Illuminate\Console\Scheduling\Schedule;use Illuminate\Foundation\Console\Kernel as ConsoleKernel;class Kernel extends ConsoleKernel {	/**	 * The Artisan commands provided by your application.	 *	 * @var array	 */	protected $commands = [		'App\Console\Commands\Inspire',        'App\Console\Commands\TestConsole',        'App\Console\Commands\SyncAlgoEntristExceptionConsole'	];	/**	 * Define the application's command schedule.	 *	 * @param  \Illuminate\Console\Scheduling\Schedule  $schedule	 * @return void	 */	protected function schedule(Schedule $schedule)	{//		$schedule->command('inspire')//				 ->hourly();        //调用artisan        //$schedule->command('testconsole')->everyFiveMinutes();        $schedule->command('sync:algoEntrustExcp')->everyFiveMinutes();	}}

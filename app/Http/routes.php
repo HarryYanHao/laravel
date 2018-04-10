@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,8 +17,17 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('redis','RedisController@index');
+Route::get('pub','RedisController@pub');
+Route::get('send_mail','EmailController@index');
+Route::get('send_hmail','EmailController@hMail');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-Route::resource('test','TestController');
+Route::group(['middleware'=>[]],function(){
+    Route::resource('test','TestController');
+});
+
+
