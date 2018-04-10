@@ -23,6 +23,7 @@ Route::get('send_mail','EmailController@index');
 Route::get('send_hmail','EmailController@hMail');
 Route::get('laravel_new_branch',function(){
     echo 'laravel_new_branch';
+    echo 'other commit';
 });
 
 Route::controllers([
