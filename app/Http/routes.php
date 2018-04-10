@@ -21,6 +21,9 @@ Route::get('redis','RedisController@index');
 Route::get('pub','RedisController@pub');
 Route::get('send_mail','EmailController@index');
 Route::get('send_hmail','EmailController@hMail');
+Route::get('laravel_new_branch',function(){
+    echo 'laravel_new_branch';
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
